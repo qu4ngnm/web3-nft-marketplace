@@ -13,12 +13,14 @@ function shortifyAddress(address: string) {
 }
 
 const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
+  let src = item.meta.image.startsWith("https://") ? item.meta.image : "https://" + item.meta.image;
   return (
     <>
       <div className="flex-shrink-0">
         <img
           className={`h-full w-full object-cover`}
-          src={item.meta.image}
+          // src={`https://${item.meta.image}`}
+          src={src}
           alt="New NFT"
         />
       </div>

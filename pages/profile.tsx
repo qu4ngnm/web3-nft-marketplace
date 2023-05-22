@@ -18,7 +18,7 @@ function classNames(...classes: string[]) {
 const Profile: NextPage = () => {
   const { nfts }  = useOwnedNfts();
   const [activeNft, setActiveNft] = useState<Nft>();
-
+  
   useEffect(() => {
     if (nfts.data && nfts.data.length > 0) {
       setActiveNft(nfts.data[0]);
@@ -26,7 +26,6 @@ const Profile: NextPage = () => {
 
     return () => setActiveNft(undefined)
   }, [nfts.data])
-
   return (
     <BaseLayout>
       <div className="h-full flex">
@@ -80,7 +79,7 @@ const Profile: NextPage = () => {
                           )}
                         >
                           <img
-                            src={nft.meta.image}
+                            src={nft.meta.image.startsWith("https://") ? nft.meta.image : "https://" + nft.meta.image}
                             alt=""
                             className={classNames(
                               nft.tokenId === activeNft?.tokenId  ? '' : 'group-hover:opacity-75',

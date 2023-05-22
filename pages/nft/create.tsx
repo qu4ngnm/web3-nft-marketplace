@@ -74,11 +74,11 @@ const NftCreate: NextPage = () => {
       )
 
       const data = res.data as PinataRes;
-
       setNftMeta({
         ...nftMeta,
         image: `${process.env.NEXT_PUBLIC_PINATA_DOMAIN}/ipfs/${data.IpfsHash}`
       });
+      debugger
     } catch(e: any) {
       console.error(e.message);
     }
@@ -120,6 +120,7 @@ const NftCreate: NextPage = () => {
 
       const data = res.data as PinataRes;
       setNftURI(`${process.env.NEXT_PUBLIC_PINATA_DOMAIN}/ipfs/${data.IpfsHash}`);
+      debugger
     } catch (e: any) {
       console.error(e.message);
     }
