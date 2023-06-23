@@ -7,8 +7,8 @@ import ActiveLink from '../link';
 import Walletbar from './Walletbar';
 
 const navigation = [
-  { name: 'Marketplace', href: '/', current: true },
-  { name: 'Create', href: '/nft/create', current: false }
+  { name: 'Khu giao dịch', href: '/', current: true },
+  { name: 'Tạo NFT', href: '/nft/create', current: false }
 ]
 
 function classNames(...classes: string[]) {
@@ -28,7 +28,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu butt*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only">Mở menu chính</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -70,10 +70,10 @@ export default function Navbar() {
                       <circle cx={4} cy={4} r={3} />
                     </svg>
                     { network.isLoading ?
-                      "Loading..." :
+                      "Đang tải..." :
                       account.isInstalled ?
                       network.data :
-                      "Install Web3 Wallet"
+                      "Cài đặt ví Web3"
                     }
                   </span>
                 </div>

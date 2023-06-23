@@ -30,7 +30,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Loading ...
+          Đang tải ...
         </button>
       </div>
     )
@@ -41,7 +41,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
       <Menu as="div" className="ml-3 relative">
         <div>
           <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-            <span className="sr-only">Open user menu</span>
+            <span className="sr-only">Mở menu người dùng</span>
             <img
               className="h-8 w-8 rounded-full"
               src="/images/default_user_image.png"
@@ -62,13 +62,22 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <Link href="/profile">
-                <a
-                  className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                >
-                  Profile
-                </a>
-              </Link>
+              <>
+                <Link href="/profile">
+                  <a
+                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                  >
+                    Thông tin hồ sơ
+                  </a>
+                </Link>
+                <Link href="#">
+                  <a
+                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                  >
+                    Cài đặt
+                  </a>
+                </Link>
+              </>
 
             )}
           </Menu.Item>
@@ -87,7 +96,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Connect Wallet
+          Kết nối ví
         </button>
       </div>
     )
@@ -101,7 +110,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          No Wallet
+          Không tìm thấy ví
         </button>
       </div>
     )
